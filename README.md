@@ -25,12 +25,12 @@ Lecture 3
 - React component is a normal js function which returns jsx (react element)
 - React element is object
   // Element
-- const heading = <h1>Heading</h1>
+- const heading = `<h1>Heading</h1>`
   root.render(heading)
   // Component
-- const HeadingComponent = () => {return <h1>Heading</h1>}
-  root.render(<HeadingComponent />) // Babel get to know it is component by <>
-  <HeadingComponent /> is same as HeadingComponent()
+- const HeadingComponent = () => {return `<h1>Heading</h1>`}
+  root.render(`<HeadingComponent />`) // Babel get to know it is component by <>
+  `<HeadingComponent />` is same as HeadingComponent()
   render needs element as a arguement
 
 - Element can have component inside it
