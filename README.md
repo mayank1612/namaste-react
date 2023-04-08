@@ -12,6 +12,12 @@ Lecture 2
 - React is replacing root, not appending
 - Script inside root is not replaced by react
 
+# parcel
+
+- Dev build
+- Create server
+- HMR Hot module replacement - Auto refresh browser on refresh
+
 Lecture 3
 
 - npm start is same as npm run start > works only for start
@@ -25,12 +31,12 @@ Lecture 3
 - React component is a normal js function which returns jsx (react element)
 - React element is object
   // Element
-- const heading = <h1>Heading</h1>
+- const heading = `<h1>Heading</h1>`
   root.render(heading)
   // Component
-- const HeadingComponent = () => {return <h1>Heading</h1>}
-  root.render(<HeadingComponent />) // Babel get to know it is component by <>
-  <HeadingComponent /> is same as HeadingComponent()
+- const HeadingComponent = () => {return `<h1>Heading</h1>`}
+  root.render(`<HeadingComponent />`) // Babel get to know it is component by <>
+  `<HeadingComponent />` is same as HeadingComponent()
   render needs element as a arguement
 
 - Element can have component inside it
