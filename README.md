@@ -58,3 +58,15 @@ Lecture 5
 - Reconciliation algo - React fibre - Diff algo
 - React creates copy of virtual DOM then check diff then update DOM
 - We need function in useState to update variable. Function will trigger the diff algorithm
+
+Lecture 6
+
+- Monolith (All at one place - UI, API's, backend) vs micro services
+- babelrc pending
+- useEffect with empty dependency called 'after' initial render. (First render then useEffect)
+- In JSX, JS expression is allowed, not statement. But statement can be converted to expression
+- Optional chaining (?.) `obj.val?.prop
+obj.val?.[expr]
+obj.func?.(args)`
+- (CORS) is a browser mechanism which enables controlled access to resources located outside of a given domain.
+- fetch() is browser functionality. Node doesn't know it. Install package to use it. json() on response is prototype of response
