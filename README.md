@@ -70,3 +70,4 @@ obj.val?.[expr]
 obj.func?.(args)`
 - (CORS) is a browser mechanism which enables controlled access to resources located outside of a given domain.
 - fetch() is browser functionality. Node doesn't know it. Install package to use it. json() on response is prototype of response
+- expressions return a value, while statements perform an action
