@@ -1,7 +1,6 @@
 import { restaurantList } from '../contants';
 import RestaurantCard from './RestaurantCard';
 import { useState, useEffect } from 'react';
-import Shimmer from './Shimmer';
 
 function filterData(searchText, restaurants) {
   // 8 restraunt list = > filtered  rest with "King"
@@ -42,8 +41,15 @@ const Body = () => {
   console.log('render');
 
   // not render component (Early return)
-  if (loading) return <Shimmer />;
-
+  if (loading) {
+    return (
+      <div className="restaurant-list">
+        {[1, 2, 3, 4].map((el) => {
+          return <RestaurantCard loading key={el} />;
+        })}
+      </div>
+    );
+  }
   return (
     <>
       <div className="search-container">
@@ -70,7 +76,7 @@ const Body = () => {
       </div>
       <div className="restaurant-list">
         {allRestaurants?.length === 0
-          ? 'NO restaurant'
+          ? 'No restaurant'
           : filteredRestaurants?.length === 0
           ? 'No Restraunt match your Filter!!'
           : filteredRestaurants.map((restaurant) => {
