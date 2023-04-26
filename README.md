@@ -72,3 +72,6 @@ obj.func?.(args)`
 - fetch() is browser functionality. Node doesn't know it. Install package to use it. json() on response is prototype of response
 - expressions return a value, while statements perform an action
 - array is valid react child. It aautomatically iterate
+- don't create component inside component
+- useState provide local state variable which is used inside react component
+- good practice to use cdn for images. (It cache, optimise, 100% up etc)

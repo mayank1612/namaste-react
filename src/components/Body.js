@@ -79,7 +79,7 @@ const Body = () => {
           ? 'No restaurant'
           : filteredRestaurants?.length === 0
           ? 'No Restraunt match your Filter!!'
-          : filteredRestaurants.map((restaurant) => {
+          : filteredRestaurants?.map((restaurant) => {
               return (
                 <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
               );
