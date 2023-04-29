@@ -80,3 +80,6 @@ Lecture 7
 
 - SPA
 - Client side(don't make api call, code is present here only) vs server side routing(call api to fetch another html file)
+- useEffect cleanup function does not only run when our component wants to unmount, it also runs right before the execution of the next scheduled effect.
+- The cleanup is commonly used to cancel all subscriptions made and cancel fetch requests
+- Pure js function - They always yield consistent result and does not manipulate non-local state or have any side effects. Article: https://www.scaler.com/topics/pure-function-in-javascript/

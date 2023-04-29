@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -8,13 +8,16 @@ import About from './components/About';
 import RouteError from './components/RouteError';
 
 const AppLayout = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
-  );
+  const [count, setCount] = useState(10);
+
+  // useEffect(() => {}, []);
+  const x = setInterval(() => {
+    setCount(count - 1);
+  }, 1000);
+  if (count === 0) {
+    clearInterval(x);
+  }
+  return <>{count}</>;
 };
 const appRoutes = createBrowserRouter([
   {
