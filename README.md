@@ -75,3 +75,8 @@ obj.func?.(args)`
 - don't create component inside component
 - useState provide local state variable which is used inside react component
 - good practice to use cdn for images. (It cache, optimise, 100% up etc)
+
+Lecture 7
+
+- SPA
+- Client side(don't make api call, code is present here only) vs server side routing(call api to fetch another html file)
