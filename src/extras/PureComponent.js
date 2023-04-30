@@ -1,16 +1,29 @@
-import { PureComponent, useState } from 'react';
+import { PureComponent, memo, useState } from 'react';
 
-class Greeting extends PureComponent {
-  render() {
-    console.log('Greeting was rendered at', new Date().toLocaleTimeString());
-    return (
-      <h3>
-        Hello{this.props.name && ', '}
-        {this.props.name}!
-      </h3>
-    );
-  }
-}
+// class Greeting extends PureComponent {
+//   render() {
+//     console.log('Greeting was rendered at', new Date().toLocaleTimeString());
+//     return (
+//       <h3>
+//         Hello{this.props.name && ', '}
+//         {this.props.name}!
+//       </h3>
+//     );
+//   }
+// }
+
+// Pure react component gives same result for same props and state. it skips re-renders for same props and state.
+
+// wrap function iside memo to make it pure react component
+const Greeting = memo((props) => {
+  console.log('Greeting was rendered at', new Date().toLocaleTimeString());
+  return (
+    <h3>
+      Hello{props.name && ', '}
+      {props.name}!
+    </h3>
+  );
+});
 
 export default function PureReactComponent() {
   const [name, setName] = useState('');
