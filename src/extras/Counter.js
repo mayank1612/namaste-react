@@ -38,7 +38,7 @@ export default function App() {
 //   useEffect(() => {
 //     clearInterval(id);
 //     id = setInterval(() => {
-//       setCount(count - 1);
+//       setCount((prev) => prev -1);
 //     }, 1000);
 //     console.log({ id });
 //     return () => {
