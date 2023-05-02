@@ -80,6 +80,9 @@ Lecture 7
 
 - SPA
 - Client side(don't make api call, code is present here only) vs server side routing(call api to fetch another html file)
+
+Extras
+
 - useEffect cleanup function does not only run when our component wants to unmount, it also runs right before the execution of the next scheduled effect.
 - The cleanup is commonly used to cancel all subscriptions made and cancel fetch requests
 - Pure js function - They always yield consistent result and does not manipulate non-local state or have any side effects. Article: https://www.scaler.com/topics/pure-function-in-javascript/
@@ -88,3 +91,7 @@ Lecture 7
 - PureComponent is similar to Component but it skips re-renders for same props and state.
 - However, your component will still re-render if a context that it’s using changes.
   (Advantage: Optimized as number of re-render is reduced)
+- Strict Mode enables the following development-only behaviors:
+  Your components will re-render an extra time to find bugs caused by impure rendering.
+  Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
+  Your components will be checked for usage of deprecated APIs.
