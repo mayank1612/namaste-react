@@ -71,7 +71,7 @@ obj.func?.(args)`
 - (CORS) is a browser mechanism which enables controlled access to resources located outside of a given domain.
 - fetch() is browser functionality. Node doesn't know it. Install package to use it. json() on response is prototype of response
 - expressions return a value, while statements perform an action
-- array is valid react child. It aautomatically iterate
+- array is valid react child. It automatically iterate
 - don't create component inside component
 - useState provide local state variable which is used inside react component
 - good practice to use cdn for images. (It cache, optimise, 100% up etc)
@@ -80,8 +80,11 @@ Lecture 7
 
 - SPA
 - Client side(don't make api call, code is present here only) vs server side routing(call api to fetch another html file)
+- routes
+- formik library for react forms
+- createBrowserRouter, RouterProvider, Link, useRouteError, useParams, Outlet from 'react-router-dom'
 
-Extras
+  Extras
 
 - useEffect cleanup function does not only run when our component wants to unmount, it also runs right before the execution of the next scheduled effect.
 - The cleanup is commonly used to cancel all subscriptions made and cancel fetch requests

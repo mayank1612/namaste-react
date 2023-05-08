@@ -1,6 +1,7 @@
 import { restaurantList } from '../contants';
 import RestaurantCard from './RestaurantCard';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function filterData(searchText, restaurants) {
   // 8 restraunt list = > filtered  rest with "King"
@@ -26,7 +27,7 @@ const Body = () => {
 
   async function getRestaurants() {
     const data = await fetch(
-      'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING'
+      'https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.422706520198265&lng=78.34708231958652&page_type=DESKTOP_WEB_LISTING'
     ).catch((err) => {
       console.log(err);
     });
@@ -44,9 +45,11 @@ const Body = () => {
   if (loading) {
     return (
       <div className="restaurant-list">
-        {[1, 2, 3, 4].map((el) => {
-          return <RestaurantCard loading key={el} />;
-        })}
+        {Array(5)
+          .fill('')
+          .map((el, index) => {
+            return <RestaurantCard loading key={index} />;
+          })}
       </div>
     );
   }
@@ -81,7 +84,12 @@ const Body = () => {
           ? 'No Restraunt match your Filter!!'
           : filteredRestaurants?.map((restaurant) => {
               return (
-                <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+                <Link
+                  key={restaurant.data.id}
+                  to={'restaurant/' + restaurant.data.id}
+                >
+                  <RestaurantCard {...restaurant.data} />
+                </Link>
               );
             })}
       </div>

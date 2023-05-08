@@ -33,3 +33,6 @@
   display: flex;
   flex-wrap: wrap;
 }
+.navItem {
+  margin: 10px;
+}
