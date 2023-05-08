@@ -31,6 +31,13 @@ const appRoutes = createBrowserRouter([
       {
         path: '/about',
         element: <About />,
+        children: [
+          {
+            // Outlet should be present in parent
+            path: 'profile', // profile means relative to parent, / means relative to root
+            element: <Contact />,
+          },
+        ],
       },
       {
         path: '/contact',
