@@ -84,7 +84,7 @@ Lecture 7
 - formik library for react forms
 - createBrowserRouter, RouterProvider, Link, useRouteError, useParams, Outlet from 'react-router-dom'
 
-  Extras
+# Extras
 
 - useEffect cleanup function does not only run when our component wants to unmount, it also runs right before the execution of the next scheduled effect.
 - The cleanup is commonly used to cancel all subscriptions made and cancel fetch requests

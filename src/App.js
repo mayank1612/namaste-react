@@ -8,6 +8,7 @@ import About from './components/About';
 import RouteError from './components/RouteError';
 import Contact from './components/Contact';
 import RestaurantMenu from './components/RestaurantMenu';
+import Profile from './components/Profile';
 
 const AppLayout = () => {
   return (
@@ -35,7 +36,7 @@ const appRoutes = createBrowserRouter([
           {
             // Outlet should be present in parent
             path: 'profile', // profile means relative to parent, / means relative to root
-            element: <Contact />,
+            element: <Profile />,
           },
         ],
       },
