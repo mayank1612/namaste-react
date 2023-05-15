@@ -1,4 +1,4 @@
-Lecture 1
+# Lecture 1
 
 - React library has core react logic
 - React DOM has logic to play with DOM
@@ -7,7 +7,7 @@ Lecture 1
 - React element is object: Can inject react in any part of website. In existing project it can be added in header only
 - React has mojorly a single root
 
-Lecture 2
+# Lecture 2
 
 - React is replacing root, not appending
 - Script inside root is not replaced by react
@@ -18,7 +18,7 @@ Lecture 2
 - Create server
 - HMR Hot module replacement - Auto refresh browser on refresh
 
-Lecture 3
+# Lecture 3
 
 - npm start is same as npm run start > works only for start
 - npm run build != npm build
@@ -41,17 +41,14 @@ Lecture 3
 
 - Element can have component inside it
 - JSX sanitize data before executing it. Whatever data is inside {} under jsx is sanitized to prevent cross-site scripting
-
-Lecture 3
-
 - Key is given as prop to iterating element/component to make it unique which helps in rerender optimization
 - Avoid to use index as a key
 
-Lecture 4
+# Lecture 4
 
 - Two type of export - named and default (to export only one item)
 
-Lecture 5
+# Lecture 5
 
 - React is fast because it is using virtual DOM (efficient DOM manipulation)
 - Virtual DOM is nested js object which is representation of actual DOM
@@ -59,7 +56,7 @@ Lecture 5
 - React creates copy of virtual DOM then check diff then update DOM
 - We need function in useState to update variable. Function will trigger the diff algorithm
 
-Lecture 6
+# Lecture 6
 
 - Monolith (All at one place - UI, API's, backend) vs micro services
 - babelrc pending
@@ -76,13 +73,17 @@ obj.func?.(args)`
 - useState provide local state variable which is used inside react component
 - good practice to use cdn for images. (It cache, optimise, 100% up etc)
 
-Lecture 7
+# Lecture 7
 
 - SPA
 - Client side(don't make api call, code is present here only) vs server side routing(call api to fetch another html file)
 - routes
 - formik library for react forms
 - createBrowserRouter, RouterProvider, Link, useRouteError, useParams, Outlet from 'react-router-dom'
+
+# Lecture 8 : Let's get classy
+
+- render() method is compulsory for class based component
 
 # Extras
 
@@ -98,7 +99,10 @@ Lecture 7
   Your components will re-render an extra time to find bugs caused by impure rendering.
   Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
   Your components will be checked for usage of deprecated APIs.
-
-Lecture 8 : Let's get classy
-
-- render() method is compulsory for class based component
+- JSX doesn't return null,undefined and false
+- The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+- logical AND or short circuit '&&' operator, the operator returns the value of the first falsy operand encountered when evaluating from left to right, or the value of the last operand if they are all truthy.
+- falsy values = null, undefined, false, 0, "", NaN
+- truthy values means all values except falsy values
+- In useState, whenever using state variable to update new value, use function version in setState
+- state variable will change only when it is rerendered, so it clubs all state changes when performed multiple at a time without using function on same state and in result update only last useState
