@@ -102,3 +102,7 @@ Lecture 7
 Lecture 8 : Let's get classy
 
 - render() method is compulsory for class based component
+- Why api call is inside useEffect (componentDidMount in class) > First render whatever is possible using default state then after useEffect rerender
+- Why super(props) is always called in class based component
+- React component life cycle
+- Why super() is called in constructor > This is because super() initializes the parent class and sets up the this keyword and its context.
