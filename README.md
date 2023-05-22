@@ -88,6 +88,14 @@ obj.func?.(args)`
 - Why super(props) is always called in class based component
 - React component life cycle
 - Why super() is called in constructor > This is because super() initializes the parent class and sets up the this keyword and its context.
+- Life cycle example > parent constructor, parent render, child constructor, child render, child componentDidMount, parent componentDidMount
+- https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+- Refer About.js for detailed lifecycle
+- Lifecycle has two phase, render phase and commit phase. In render phase, constructor and render is completed for all parent + child. In commit phase, React updates ­D­O­M and componentDidMount() is executed
+- You can make componenentDidMount async but not useEffect callback. Why?
+  React relies on the return value of the callback to handle the cleanup of the effect. If you were to use an async function directly as the callback, it would return a Promise, which is not a valid type for the cleanup function.
+- Don't compare react class life cycle with useEffect
+- Don't compare react class life cycle with useEffect
 
 # Extras
 
