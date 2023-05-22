@@ -88,13 +88,6 @@ obj.func?.(args)`
 - Why super(props) is always called in class based component
 - React component life cycle
 - Why super() is called in constructor > This is because super() initializes the parent class and sets up the this keyword and its context.
-- JSX doesn't return null,undefined and false
-- The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
-- logical AND or short circuit '&&' operator, the operator returns the value of the first falsy operand encountered when evaluating from left to right, or the value of the last operand if they are all truthy.
-- falsy values = null, undefined, false, 0, "", NaN
-- truthy values means all values except falsy values
-- In useState, whenever using state variable to update new value, use function version in setState
-- state variable will change only when it is rerendered, so it clubs all state changes when performed multiple at a time without using function on same state and in result update only last useState
 
 # Extras
 
@@ -110,3 +103,10 @@ obj.func?.(args)`
   Your components will re-render an extra time to find bugs caused by impure rendering.
   Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
   Your components will be checked for usage of deprecated APIs.
+- JSX doesn't return null,undefined and false
+- The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+- logical AND or short circuit '&&' operator, the operator returns the value of the first falsy operand encountered when evaluating from left to right, or the value of the last operand if they are all truthy.
+- falsy values = null, undefined, false, 0, "", NaN
+- truthy values means all values except falsy values
+- In useState, whenever using state variable to update new value, use function version in setState
+- state variable will change only when it is rerendered, so it clubs all state changes when performed multiple at a time without using function on same state and in result update only last useState
