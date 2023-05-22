@@ -84,6 +84,8 @@ obj.func?.(args)`
 # Lecture 8 : Let's get classy
 
 - render() method is compulsory for class based component
+- Life cycle methods
+  Constructor, render, componentDidMount (make api calls here - first render it then will update)
 
 # Extras
 
