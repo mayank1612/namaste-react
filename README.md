@@ -103,6 +103,7 @@ obj.func?.(args)`
 - chunking/code spliting/dynamic bundling/lazy loading/on demand loading/ dymamic import
 - upon on demand loading, react tries to suspend it
 - lazy, suspense
+- don't use lazy load inside component, always lazy load on top
 
 # Extras
 
