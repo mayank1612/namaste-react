@@ -1,7 +1,7 @@
-import { restaurantList } from '../contants';
 import RestaurantCard from './RestaurantCard';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useOnline } from '../utils/useOnline';
 
 function filterData(searchText, restaurants) {
   // 8 restraunt list = > filtered  rest with "King"
@@ -31,7 +31,7 @@ const Body = () => {
     ).catch((err) => {
       console.log(err);
     });
-    console.log(data);
+
     const json = await data?.json();
     // Optional Chaining
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -39,9 +39,11 @@ const Body = () => {
     setLoading(false);
   }
 
-  console.log('render');
-
+  const isOnline = useOnline();
   // not render component (Early return)
+  if (!isOnline) {
+    return <>You are offline</>;
+  }
   if (loading) {
     return (
       <div className="restaurant-list">

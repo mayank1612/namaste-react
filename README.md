@@ -99,6 +99,10 @@ obj.func?.(args)`
 - Don't compare react class life cycle with useEffect
 - Don't compare react class life cycle with useEffect
 
+# Lecture 9 : Optimizing the app
+
+- custom hook
+
 # Extras
 
 - useEffect cleanup function does not only run when our component wants to unmount, it also runs right before the execution of the next scheduled effect.
