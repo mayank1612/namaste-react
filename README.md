@@ -87,7 +87,6 @@ obj.func?.(args)`
 - Life cycle methods
   Constructor, render, componentDidMount (make api calls here - first render it then will update)
 - Why api call is inside useEffect (componentDidMount in class) > First render whatever is possible using default state then after useEffect rerender
-- Why super(props) is always called in class based component
 - React component life cycle
 - Why super() is called in constructor > This is because super() initializes the parent class and sets up the this keyword and its context.
 - Life cycle example > parent constructor, parent render, child constructor, child render, child componentDidMount, parent componentDidMount
@@ -97,11 +96,13 @@ obj.func?.(args)`
 - You can make componenentDidMount async but not useEffect callback. Why?
   React relies on the return value of the callback to handle the cleanup of the effect. If you were to use an async function directly as the callback, it would return a Promise, which is not a valid type for the cleanup function.
 - Don't compare react class life cycle with useEffect
-- Don't compare react class life cycle with useEffect
 
 # Lecture 9 : Optimizing the app
 
 - custom hook
+- chunking/code spliting/dynamic bundling/lazy loading/on demand loading/ dymamic import
+- upon on demand loading, react tries to suspend it
+- lazy, suspense
 
 # Extras
 
