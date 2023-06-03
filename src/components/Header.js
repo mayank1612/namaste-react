@@ -1,15 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const loggedInUser = () => {
-  // API call to check authentication
-  return false;
-};
-
 const Title = () => (
   <Link to="/">
     <img
-      className="logo"
+      className="h-24"
       alt="logo"
       src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
     />
@@ -25,14 +20,14 @@ const Header = () => {
     { label: 'Cart', redirectTo: '/cart' },
   ];
   return (
-    <div className="header">
+    <div className="flex justify-between items-center px-3 bg-pink-50 shadow-lg">
       <Title />
-      <div className="nav-items">
-        <ul>
+      <div>
+        <ul className="flex">
           {navItems.map((item) => {
             return (
               <Link to={item.redirectTo} key={item.label}>
-                <li className="navItem">{item.label}</li>
+                <li className="mx-2">{item.label}</li>
               </Link>
             );
           })}

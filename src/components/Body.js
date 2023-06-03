@@ -46,8 +46,8 @@ const Body = () => {
   }
   if (loading) {
     return (
-      <div className="restaurant-list">
-        {Array(5)
+      <div className="flex flex-wrap justify-between">
+        {Array(9)
           .fill('')
           .map((el, index) => {
             return <RestaurantCard loading key={index} />;
@@ -60,15 +60,15 @@ const Body = () => {
       <div className="search-container">
         <input
           type="text"
-          className="search-input"
-          placeholder="Search"
+          className="m-3 p-1 border-solid border-spacing-1"
+          placeholder="Search restaurant"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         />
         <button
-          className="search-btn"
+          className="bg-purple-800 text-white p-2 rounded-md mx-2"
           onClick={() => {
             //need to filter the data
             const data = filterData(searchText, allRestaurants);
@@ -79,7 +79,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap justify-between">
         {allRestaurants?.length === 0
           ? 'No restaurant'
           : filteredRestaurants?.length === 0

@@ -6,6 +6,7 @@
 - For a library, your app code calls the library code. For a framework, your app code is called by the framework.
 - React element is object: Can inject react in any part of website. In existing project it can be added in header only
 - React has mojorly a single root
+- npx is to directly execute
 
 # Lecture 2
 
@@ -105,6 +106,12 @@ obj.func?.(args)`
 - lazy, suspense
 - don't use lazy load inside component, always lazy load on top
 
+# Lecture : Jo dikhta h vo bikta h
+
+- Tailwind css : Override default behaviour of HTML tags like <h1>, <a>
+  - Easy to debug, less bundle size, less code, intutive using extention
+  - Not much readable, if many attributes are used
+
 # Extras
 
 - useEffect cleanup function does not only run when our component wants to unmount, it also runs right before the execution of the next scheduled effect.
@@ -125,4 +132,4 @@ obj.func?.(args)`
 - falsy values = null, undefined, false, 0, "", NaN
 - truthy values means all values except falsy values
 - In useState, whenever using state variable to update new value, use function version in setState
-- state variable will change only when it is rerendered, so it clubs all state changes when performed multiple at a time without using function on same state and in result update only last useState
+- "state variable will change only when it is rerendered", so it clubs all state changes when performed multiple at a time without using callback function on same state and in result update only last useState

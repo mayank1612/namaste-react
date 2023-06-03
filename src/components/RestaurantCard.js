@@ -9,12 +9,12 @@ const RestrauntCard = ({
   loading,
 }) => {
   return loading ? (
-    <div className="card">
-      <Skeleton variant="rectangular" width={200} height={300} />
+    <div className="m-3 bg-pink-50 h-[400px] w-[400px]">
+      <Skeleton variant="rectangular" height="400px" width="400px" />
     </div>
   ) : (
-    <div className="card">
-      <img src={IMG_CDN_URL + cloudinaryImageId} />
+    <div className="m-3 bg-pink-50 p-3">
+      <img src={IMG_CDN_URL + cloudinaryImageId} className="h-[217px] mb-2" />
       <h2>{name}</h2>
       <h3>{cuisines.join(', ')}</h3>
       <h4>{lastMileTravelString} minutes</h4>
