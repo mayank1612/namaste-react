@@ -18,6 +18,7 @@ const Header = () => {
     { label: 'About', redirectTo: '/about' },
     { label: 'Contact', redirectTo: '/contact' },
     { label: 'Cart', redirectTo: '/cart' },
+    { label: 'Instamart', redirectTo: '/instamart' },
   ];
   return (
     <div className="flex justify-between items-center px-3 bg-pink-50 shadow-lg">

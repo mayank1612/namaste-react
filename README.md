@@ -106,11 +106,20 @@ obj.func?.(args)`
 - lazy, suspense
 - don't use lazy load inside component, always lazy load on top
 
-# Lecture : Jo dikhta h vo bikta h
+# Lecture 10 : Jo dikhta h vo bikta h
 
 - Tailwind css : Override default behaviour of HTML tags like <h1>, <a>
   - Easy to debug, less bundle size, less code, intutive using extention
   - Not much readable, if many attributes are used
+
+# Lecture 11 : Data is new oil
+
+- Prop drilling : Passing prop from one component to another
+- Rerender occur when:
+  Update in State
+  Update in prop
+  Re-rendering of the parent component
+- ligting the state up : controlled accordian - when siblings state depends on each other
 
 # Extras
 

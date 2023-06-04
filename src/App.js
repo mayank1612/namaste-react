@@ -10,6 +10,7 @@ import RestaurantMenu from './components/RestaurantMenu';
 import Profile from './components/Profile';
 import ProfileClass from './components/ProfileClass';
 import { CircularProgress } from '@mui/material';
+import Instamart from './components/Instamart';
 
 const About = lazy(() => {
   return import('./components/About');
@@ -56,6 +57,10 @@ const appRoutes = createBrowserRouter([
       {
         path: '/restaurant/:resId',
         element: <RestaurantMenu />,
+      },
+      {
+        path: '/instamart',
+        element: <Instamart />,
       },
     ],
   },
