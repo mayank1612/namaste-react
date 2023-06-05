@@ -7,9 +7,9 @@ const Section = ({ title, desc, isVisible, setIsVisible }) => {
       <div className="text-2xl">{title}</div>
       <button
         className="cursor-pointer underline"
-        onClick={setIsVisible(!isVisible)}
+        onClick={() => setIsVisible(title)}
       >
-        {isVisible ? 'show' : 'hide'}
+        {isVisible ? 'hide' : 'show'}
       </button>
       {isVisible && <div>{desc}</div>}
     </div>
@@ -32,7 +32,7 @@ const sectionsArray = [
 ];
 
 function Instamart() {
-  const [isVisible, setIsVisible] = useState('Teams');
+  const [isVisible, setIsVisible] = useState('');
 
   return (
     <div className="m-3">
@@ -42,9 +42,9 @@ function Instamart() {
           <Section
             key={index}
             {...data}
-            isVisible={isVisible}
-            setIsVisible={() => {
-              setIsVisible(data.title);
+            isVisible={data.title === isVisible}
+            setIsVisible={(title) => {
+              setIsVisible(title === isVisible ? '' : title);
             }}
           />
         );
