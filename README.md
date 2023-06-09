@@ -120,6 +120,9 @@ obj.func?.(args)`
   Update in prop
   Re-rendering of the parent component
 - ligting the state up : controlled accordian - when siblings state depends on each other
+- context is like useState for whole app
+- Provider is updating context value. Provider takes value as a prop
+- Consumer is used in class based component. Check About.js
 
 # Extras
 
