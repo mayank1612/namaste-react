@@ -119,7 +119,15 @@ obj.func?.(args)`
   Update in State
   Update in prop
   Re-rendering of the parent component
-- ligting the state up : controlled accordian - when siblings state depends on each other
+- lifting the state up : controlled accordian - when siblings state depends on each other
+
+# Lecture 12 : Let's build our store
+
+- On click, dispatches an action, it calls the reducer function, it updates the slice of a redux store
+- Cannot udate direct redux store
+- To read slice, selector is used. Selector is a hook
+- App is subscribed with slice via selector
+- Core job of redux is to mantain store/slice
 
 # Extras
 
