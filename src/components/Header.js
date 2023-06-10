@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import UserContext from '../utils/userContext';
 
 const Title = () => (
   <Link to="/">
@@ -20,6 +21,8 @@ const Header = () => {
     { label: 'Cart', redirectTo: '/cart' },
     { label: 'Instamart', redirectTo: '/instamart' },
   ];
+  const { user } = useContext(UserContext);
+
   return (
     <div className="flex justify-between items-center px-3 bg-pink-50 shadow-lg">
       <Title />
@@ -34,6 +37,7 @@ const Header = () => {
           })}
         </ul>
       </div>
+      <span className="p-10 text-red-900 font-bold">{user.name}</span>
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (

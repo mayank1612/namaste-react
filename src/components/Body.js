@@ -1,7 +1,8 @@
 import RestaurantCard from './RestaurantCard';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useOnline } from '../utils/useOnline';
+import UserContext from '../utils/userContext';
 
 function filterData(searchText, restaurants) {
   // 8 restraunt list = > filtered  rest with "King"
@@ -17,6 +18,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [loading, setLoading] = useState(true);
+  const { user, setUser } = useContext(UserContext);
 
   // empty dependency array => once after render
   // dep arry [searchText] => once after initial render + everytime after redern (my searchText changes)
@@ -40,6 +42,7 @@ const Body = () => {
   }
 
   const isOnline = useOnline();
+
   // not render component (Early return)
   if (!isOnline) {
     return <>You are offline</>;
@@ -57,7 +60,7 @@ const Body = () => {
   }
   return (
     <>
-      <div className="search-container">
+      <div className="bg-pink-100 my-5">
         <input
           type="text"
           className="m-3 p-1 border-solid border-spacing-1"
@@ -68,7 +71,7 @@ const Body = () => {
           }}
         />
         <button
-          className="bg-purple-800 text-white p-2 rounded-md mx-2"
+          className="bg-purple-800 text-white p-1.5 rounded-md"
           onClick={() => {
             //need to filter the data
             const data = filterData(searchText, allRestaurants);
@@ -78,6 +81,15 @@ const Body = () => {
         >
           Search
         </button>
+        <input
+          type="text"
+          className="m-3 p-1 border-solid border-spacing-1"
+          placeholder="Update user name"
+          value={user.name}
+          onChange={(e) => {
+            setUser({ ...user, name: e.target.value });
+          }}
+        />
       </div>
       <div className="flex flex-wrap justify-between">
         {allRestaurants?.length === 0

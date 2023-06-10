@@ -1,5 +1,7 @@
 import { IMG_CDN_URL } from '../contants';
 import { Skeleton } from '@mui/material';
+import { useContext } from 'react';
+import UserContext from '../utils/userContext';
 
 const RestrauntCard = ({
   name,
@@ -8,6 +10,9 @@ const RestrauntCard = ({
   lastMileTravelString,
   loading,
 }) => {
+  const { user } = useContext(UserContext);
+  console.log(user);
+  console.log(user.name);
   return loading ? (
     <div className="m-3 bg-pink-50 h-[350px] w-[350px]">
       <Skeleton variant="rectangular" height="350px" width="350px" />
@@ -18,6 +23,8 @@ const RestrauntCard = ({
       <h2>{name}</h2>
       <h3>{cuisines.join(', ')}</h3>
       <h4>{lastMileTravelString} minutes</h4>
+      <span className="font-bold block">{user.name}</span>
+      <span className="font-bold block"> {user.email}</span>
     </div>
   );
 };

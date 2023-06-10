@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -11,17 +11,33 @@ import Profile from './components/Profile';
 import ProfileClass from './components/ProfileClass';
 import { CircularProgress } from '@mui/material';
 import Instamart from './components/Instamart';
+import UserContext from './utils/userContext';
 
 const About = lazy(() => {
   return import('./components/About');
 });
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: 'Mayank',
+    email: 'mayank@gmail.com',
+  });
+
+  const userRole = 'admin';
+
   return (
     <>
       <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider
+        value={{
+          user: user,
+          setUser: setUser,
+          userRole,
+        }}
+      >
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </>
   );
 };
