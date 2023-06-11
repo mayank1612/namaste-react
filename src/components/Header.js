@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../utils/userContext';
+import { useSelector } from 'react-redux';
 
 const Title = () => (
   <Link to="/">
@@ -12,16 +13,18 @@ const Title = () => (
   </Link>
 );
 
+const navItems = [
+  { label: 'Home', redirectTo: '/' },
+  { label: 'About', redirectTo: '/about' },
+  { label: 'Contact', redirectTo: '/contact' },
+  { label: 'Instamart', redirectTo: '/instamart' },
+  { label: 'Cart', redirectTo: '/cart' },
+];
+
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navItems = [
-    { label: 'Home', redirectTo: '/' },
-    { label: 'About', redirectTo: '/about' },
-    { label: 'Contact', redirectTo: '/contact' },
-    { label: 'Cart', redirectTo: '/cart' },
-    { label: 'Instamart', redirectTo: '/instamart' },
-  ];
   const { user } = useContext(UserContext);
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="flex justify-between items-center px-3 bg-pink-50 shadow-lg">
@@ -30,9 +33,16 @@ const Header = () => {
         <ul className="flex">
           {navItems.map((item) => {
             return (
-              <Link to={item.redirectTo} key={item.label}>
-                <li className="mx-2">{item.label}</li>
-              </Link>
+              <div key={item.label}>
+                <Link to={item.redirectTo}>
+                  <li className="mx-2">
+                    {item.label}
+                    {item.label === 'Cart' && (
+                      <span className="mx-1">{cartItems?.length}</span>
+                    )}
+                  </li>
+                </Link>
+              </div>
             );
           })}
         </ul>

@@ -11,8 +11,7 @@ const RestrauntCard = ({
   loading,
 }) => {
   const { user } = useContext(UserContext);
-  console.log(user);
-  console.log(user.name);
+
   return loading ? (
     <div className="m-3 bg-pink-50 h-[350px] w-[350px]">
       <Skeleton variant="rectangular" height="350px" width="350px" />

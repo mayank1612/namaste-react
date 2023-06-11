@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export const useRestaurant = (resId) => {
-  const [restaurant, setRestaurant] = useState(null);
+  const [restaurant, setRestaurant] = useState({});
   useEffect(() => {
     getRestaurantInfo();
   }, []);
@@ -12,7 +12,15 @@ export const useRestaurant = (resId) => {
         resId
     );
     const data = await res.json();
-    setRestaurant(data.data.cards[0].card.card.info);
+    setRestaurant({
+      info: data.data.cards[0].card.card.info,
+      menu:
+        data.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
+          .itemCards ??
+        data.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
+          .categories[0].itemCards,
+    });
+    console.log(data);
   }
   return restaurant;
 };
