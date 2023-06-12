@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../utils/userContext';
 import { useSelector } from 'react-redux';
+import { CartContext } from '../App';
 
 const Title = () => (
   <Link to="/">
@@ -25,6 +26,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { user } = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
+  const cartItemsFromContext = useContext(CartContext);
 
   return (
     <div className="flex justify-between items-center px-3 bg-pink-50 shadow-lg">
@@ -38,7 +40,9 @@ const Header = () => {
                   <li className="mx-2">
                     {item.label}
                     {item.label === 'Cart' && (
-                      <span className="mx-1">{cartItems?.length}</span>
+                      <span className="mx-1">
+                        ({cartItems?.length},{cartItemsFromContext.cart.length})
+                      </span>
                     )}
                   </li>
                 </Link>

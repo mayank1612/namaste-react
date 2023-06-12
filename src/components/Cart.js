@@ -2,9 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CartItem from './CartItem';
 import { clearCart } from '../utils/cartSlice';
+import { useContext } from 'react';
+import { CartContext } from '../App';
 
 function Cart() {
   const items = useSelector((store) => store.cart.items);
+  const { cart: itemsFromContext } = useContext(CartContext);
 
   const dispatch = useDispatch();
 
@@ -24,7 +27,14 @@ function Cart() {
         Clear Cart
       </button>
       <div className="flex m-2">
+        Items from Redux
         {items.map((item, index) => {
+          return <CartItem key={index} item={item} />;
+        })}
+      </div>
+      <div className="flex m-2 border-spacing-1">
+        Items from Context
+        {itemsFromContext.map((item, index) => {
           return <CartItem key={index} item={item} />;
         })}
       </div>

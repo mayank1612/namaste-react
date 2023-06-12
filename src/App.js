@@ -1,9 +1,11 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createContext } from 'react';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { routes } from './utils/routes';
+
+export const CartContext = createContext([]);
 
 const appRoutes = createBrowserRouter(routes);
 

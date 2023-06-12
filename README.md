@@ -132,6 +132,7 @@ obj.func?.(args)`
 - App is subscribed with slice via selector
 - Core job of redux is to mantain store/slice
 - check steps in store.js
+- Create cart flow using context
 
 # Extras
 
