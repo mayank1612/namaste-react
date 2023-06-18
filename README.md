@@ -108,7 +108,7 @@ obj.func?.(args)`
 
 # Lecture 10 : Jo dikhta h vo bikta h
 
-- Tailwind css : Override default behaviour of HTML tags like <h1>, <a>
+- Tailwind css : Override default behaviour of HTML tags
   - Easy to debug, less bundle size, less code, intutive using extention
   - Not much readable, if many attributes are used
 
@@ -133,6 +133,23 @@ obj.func?.(args)`
 - Core job of redux is to mantain store/slice
 - check steps in store.js
 - Create cart flow using context
+
+# Lecture 13 : Time for the test
+
+Steps:
+
+1. Install react testing library and jest
+2. npx jest --init (configure jest)
+3. npm run test
+4. install jest-environment-jsdom
+5. create **tests** folder
+6. Write test cases
+7. configure babel with jest
+8. Use render to render react component
+9. Install babel/preset-react and add preset in babelrc file, it is used to convert jsx
+10. Install @babel/preset-env and add in bebelrc file
+
+- Give wrong id to any getByTestId("abc"), it will give all html in which is rendered in jsdom
 
 # Extras
 
