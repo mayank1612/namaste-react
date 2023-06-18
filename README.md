@@ -151,6 +151,28 @@ Steps:
 
 - Give wrong id to any getByTestId("abc"), it will give all html in which is rendered in jsdom
 
+# Lecture 14 - Machine coding interview
+
+Some frequently asked questions
+
+- Todo
+- Fetch data from API
+- Froms
+- quiz app
+- forms
+- sorting
+- infinite scrolling
+- debouncing
+- counter
+- tic tac toe
+- facebook
+- higher order function
+
+* Invest 5 minutes and requirement : features and tech stack(React, redix, tailwing, jest, apollo). (High level design)
+* Next 5 minutes in planning, low level design, data flow (Low level design), discuss with interviewer so that both are on same page
+  Example - It will have header which inlcude hamberg icon, logo, search user icon
+  Filter buttton, body include videos, on click it will open up a video page and take it to new page
+
 # Extras
 
 - useEffect cleanup function does not only run when our component wants to unmount, it also runs right before the execution of the next scheduled effect.
