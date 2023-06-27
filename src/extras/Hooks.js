@@ -1,6 +1,4 @@
-import React from 'react';
-import { forwardRef } from 'react';
-import { useRef } from 'react';
+import React, { useState, forwardRef, useRef, useMemo, useEffect } from 'react';
 
 export const Ref1 = () => {
   const name = useRef();
@@ -72,6 +70,52 @@ export const Ref2 = () => {
     <div>
       <MyInput ref={ref} temp={'temp'} />
       <button onClick={handleClick}>Focus child from parent</button>
+    </div>
+  );
+};
+
+export const Memo1 = () => {
+  const [input, setInput] = useState(0);
+  const [count, setCount] = useState(0);
+
+  const double = useMemo(() => slowFunction('memo'), [input]);
+
+  function slowFunction(from) {
+    for (let index = 0; index < 1000000000; index++) {}
+    console.log({ from });
+    return input * 2;
+  }
+
+  useEffect(() => {
+    slowFunction('effect');
+  }, [input]);
+
+  return (
+    <div>
+      <div className="m-2">
+        <input
+          className="border-black border-2"
+          type="number"
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
+        />
+      </div>
+      <div className="m-2">
+        <input className="border-black border-2" type="number" value={double} />
+      </div>
+      <div className="m-2">Doubled value : {double}</div>
+      <div>
+        <button
+          onClick={() => {
+            setCount((prev) => prev + 1);
+          }}
+        >
+          Count
+        </button>
+      </div>
+      <div>Counter - {count}</div>
     </div>
   );
 };
