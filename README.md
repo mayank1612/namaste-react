@@ -1,7 +1,7 @@
 # Lecture 1
 
-- React library has core react logic
-- React DOM has logic to play with DOM
+- React library has core react logic - which calculate diff
+- React DOM has logic to play with DOM - createElement, addAttribute, appendChild etc
 - Different library because react is used in mobile, website(react-dom), some react 3d
 - For a library, your app code calls the library code. For a framework, your app code is called by the framework.
 - React element is object: Can inject react in any part of website. In existing project it can be added in header only
@@ -119,7 +119,7 @@ obj.func?.(args)`
   Update in State
   Update in prop
   Re-rendering of the parent component
-- ligting the state up : controlled accordian - when siblings state depends on each other
+- lifting the state up : controlled accordian - when siblings state depends on each other
 - context is like useState for whole app
 - Provider is updating context value. Provider takes value as a prop
 - Consumer is used in class based component. Check About.js
@@ -168,7 +168,7 @@ Some frequently asked questions
 - facebook
 - higher order function
 
-* Invest 5 minutes and requirement : features and tech stack(React, redix, tailwing, jest, apollo). (High level design)
+* Invest 5 minutes and requirement : features and tech stack(React, redux, tailwind, jest, apollo). (High level design)
 * Next 5 minutes in planning, low level design, data flow (Low level design), discuss with interviewer so that both are on same page
   Example - It will have header which inlcude hamberg icon, logo, search user icon
   Filter buttton, body include videos, on click it will open up a video page and take it to new page

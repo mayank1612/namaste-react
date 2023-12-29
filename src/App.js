@@ -12,5 +12,5 @@ const appRoutes = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// root.render(<RouterProvider router={appRoutes} />);
-root.render(<Memo1 />);
+root.render(<RouterProvider router={appRoutes} />);
+// root.render(<Memo1 />);

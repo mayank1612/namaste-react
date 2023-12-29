@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useOnline } from '../utils/useOnline';
 import UserContext from '../utils/userContext';
+import { restaurantList } from '../contants';
 
 function filterData(searchText, restaurants) {
   // 8 restraunt list = > filtered  rest with "King"
@@ -33,11 +34,13 @@ const Body = () => {
     ).catch((err) => {
       console.log(err);
     });
-
     const json = await data?.json();
     // Optional Chaining
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    console.log({ json });
+    // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(restaurantList);
+    // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(restaurantList);
     setLoading(false);
   }
 
